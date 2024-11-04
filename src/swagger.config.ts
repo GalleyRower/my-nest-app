@@ -8,8 +8,8 @@ export class SwaggerConfigService {
       .setTitle('My NestJS API')
       .setDescription('API documentation for my NestJS application')
       .setVersion('1.0')
-      .addTag('user') // Добавляем тег для группировки документации
-      .addBearerAuth() // Добавляем авторизацию Bearer (для JWT)
+      .addTag('cats')
+      .addBearerAuth()
       .build();
   }
 
@@ -19,7 +19,7 @@ export class SwaggerConfigService {
   }
 
   setupSwagger(app, document) {
-    const config = this.getSwaggerConfig();
-    SwaggerModule.setup('api', app, document, config);
+    const options = this.getSwaggerConfig();
+    SwaggerModule.setup('api', app, document, options);
   }
 }
